@@ -3,7 +3,7 @@ import { getTilePath } from "./getTile";
 
 const MAX_ZOOM = 3;
 
-const VIEWPORT_SIZE = 500;
+const VIEWPORT_SIZE = 400;
 
 const Tiler: React.FC = () => {
   const [zoom, setZoom] = React.useState(1);
