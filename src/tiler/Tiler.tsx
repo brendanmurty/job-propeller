@@ -58,11 +58,13 @@ const Tiler: React.FC = () => {
       >
         {rowsAndCols.map((col) => (
           <div
+            key={col}
             draggable={false}
             style={{ display: "flex", flexDirection: "column" }}
           >
             {rowsAndCols.map((row) => (
               <img
+                key={row}
                 draggable={false}
                 src={getTilePath(zoom, col, row)}
                 alt="1"
