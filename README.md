@@ -19,6 +19,13 @@ Commonly large datasets like maps (2D or 3D) are broken down into chunks with va
 
 We've tiled a high resolution image into a set of tiles in the 'tiled' folder found in `public/tile-assets` (un-tiled.jpg is just for reference). The task is to create a front-end application that displays the tiles in the style of a 2D map view. We have bootstrapped the application for you (with create-react-app) which provides some basic functionality such as zooming on scroll and basic panning.
 
+## Initial setup
+
+1. Install [Node 23](https://nodejs.org/en/download)
+2. Run `corepack enable`
+3. Run `yarn set version stable`
+4. Run `yarn install`
+
 ## Preparation
 
 In preparation for the interview, please pick the IDE you are feeling most comfortable with. Make sure that you can edit the code provide and that you are able to run the commands:
