@@ -21,10 +21,11 @@ We've tiled a high resolution image into a set of tiles in the 'tiled' folder fo
 
 ## Initial setup
 
-1. Install [Node 23](https://nodejs.org/en/download)
-2. Run `corepack enable`
-3. Run `yarn set version stable`
-4. Run `yarn install`
+1. Install [NVM](https://github.com/nvm-sh/nvm)
+2. Run `nvm install` to use the project's Node version from `.nvmrc`
+3. Run `corepack enable`
+4. Run `yarn set version stable`
+5. Run `yarn install`
 
 ## Preparation
 
