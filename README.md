@@ -23,8 +23,8 @@ We've tiled a high resolution image into a set of tiles in the 'tiled' folder fo
 
 In preparation for the interview, please pick the IDE you are feeling most comfortable with. Make sure that you can edit the code provide and that you are able to run the commands:
 
-- `npm start` and
-- `npm test`
+- `yarn start` and
+- `yarn test`
 
 So that we are ready to write some code and test it.
 
