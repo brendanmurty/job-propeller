@@ -67,8 +67,8 @@ const Tiler: React.FC = () => {
           fontSize: "140%",
           backgroundColor: "red"
         }}>
-        <a onClick={() => zoomIn()}>+</a>
-        <a onClick={() => zoomOut()}>-</a>
+        <button onClick={() => zoomIn()}>+</button>
+        <button onClick={() => zoomOut()}>-</button>
         <div>current zoom: {zoom}</div>
       </div>
       <div
