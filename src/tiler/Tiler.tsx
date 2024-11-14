@@ -10,13 +10,25 @@ const Tiler: React.FC = () => {
   const [isPanning, setPanning] = React.useState(false);
   const [origin, setOrigin] = React.useState([0, 0]);
 
-  const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
-    const isZoomingIn = event.deltaY > -1;
-    if (isZoomingIn && zoom !== MAX_ZOOM) {
+  const zoomIn = () => {
+    if (zoom !== MAX_ZOOM) {
       setZoom((zoom) => zoom + 1);
     }
-    if (!isZoomingIn && zoom !== 0) {
+  }
+
+  const zoomOut = () => {
+    if (zoom !== 0) {
       setZoom((zoom) => zoom - 1);
+    }
+  }
+
+  const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
+    const isZoomingIn = event.deltaY > -1;
+    
+    if (isZoomingIn) {
+      zoomIn();
+    } else {
+      zoomOut();
     }
   };
 
@@ -39,12 +51,24 @@ const Tiler: React.FC = () => {
         height: VIEWPORT_SIZE,
         background: "#0009",
         overflow: "hidden",
+        position: "relative"
       }}
       onMouseDown={() => setPanning(true)}
       onMouseUp={() => setPanning(false)}
       onMouseMove={onPan}
       onMouseLeave={() => setPanning(false)}
     >
+      <div style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          zIndex: 10000,
+          fontSize: "140%",
+          backgroundColor: "red"
+        }}>
+        <a onClick={() => zoomIn()}>+</a>
+        <a onClick={() => zoomOut()}>-</a>
+      </div>
       <div
         onWheel={handleScroll}
         style={{
