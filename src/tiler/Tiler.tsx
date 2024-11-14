@@ -46,6 +46,12 @@ const Tiler: React.FC = () => {
   // exponentially increases by a power of 2 at each zoom level.
   const rowsAndCols = [...Array(Math.pow(2, zoom))].map((_, i) => i);
   
+  // TODO: Move inline styles in to a new CSS file for this component, apply new "className" attributes here as needed.
+
+  // TODO: Cursor should change to the "grab" hand when user is dragging.
+
+  // TODO: Improve design of zoom features, could be a slider instead of buttons and text zoom level display.
+
   return (
     <div
       style={{
