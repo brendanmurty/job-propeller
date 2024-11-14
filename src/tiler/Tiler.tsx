@@ -5,24 +5,6 @@ const MAX_ZOOM = 3;
 
 const VIEWPORT_SIZE = 400;
 
-/*
-
-zoom 0:
-only 000
-
-zoom 1:
-col 1: 100, 101
-col 2: 110, 111
-
-zoom 2:
-col 1: 200, 201, 202
-col 2: 210, 211, 212
-col 3: 220, 221, 222
-
-
-
-*/
-
 const Tiler: React.FC = () => {
   const [zoom, setZoom] = React.useState(1);
   const [isPanning, setPanning] = React.useState(false);
