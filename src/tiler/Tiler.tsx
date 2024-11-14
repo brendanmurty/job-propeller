@@ -42,7 +42,8 @@ const Tiler: React.FC = () => {
     ]);
   };
 
-  // Get the array of rows and cols of map images, which exponentially increase by a power of 2 at each zoom level
+  // Initialise an array for the map images, where the number of items
+  // exponentially increases by a power of 2 at each zoom level.
   const rowsAndCols = [...Array(Math.pow(2, zoom))].map((_, i) => i);
   
   return (
