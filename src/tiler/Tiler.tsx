@@ -25,8 +25,8 @@ const Tiler: React.FC = () => {
       return;
     }
     setOrigin(([originX, originY]) => [
-      originX - event.movementX,
-      originY - event.movementY,
+      originX + event.movementX,
+      originY + event.movementY,
     ]);
   };
 
