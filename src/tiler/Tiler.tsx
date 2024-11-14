@@ -5,6 +5,24 @@ const MAX_ZOOM = 3;
 
 const VIEWPORT_SIZE = 400;
 
+/*
+
+zoom 0:
+only 000
+
+zoom 1:
+col 1: 100, 101
+col 2: 110, 111
+
+zoom 2:
+col 1: 200, 201, 202
+col 2: 210, 211, 212
+col 3: 220, 221, 222
+
+
+
+*/
+
 const Tiler: React.FC = () => {
   const [zoom, setZoom] = React.useState(1);
   const [isPanning, setPanning] = React.useState(false);
@@ -42,8 +60,9 @@ const Tiler: React.FC = () => {
     ]);
   };
 
-  const rowsAndCols = [...Array(zoom + 1)].map((_, i) => i);
-
+  // Get the array of rows and cols of map images, which exponentially increase by a power of 2 at each zoom level
+  const rowsAndCols = [...Array(Math.pow(2, zoom))].map((_, i) => i);
+  
   return (
     <div
       style={{
@@ -68,6 +87,7 @@ const Tiler: React.FC = () => {
         }}>
         <a onClick={() => zoomIn()}>+</a>
         <a onClick={() => zoomOut()}>-</a>
+        <div>current zoom: {zoom}</div>
       </div>
       <div
         onWheel={handleScroll}
